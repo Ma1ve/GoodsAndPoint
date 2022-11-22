@@ -1,0 +1,8 @@
+@media (max-width: 1200px) {
+  .basket__wrapper {
+    grid-template-columns: 1fr;
+  }
+  .basket__order {
+    margin-top: 30px;s
+  }
+}
