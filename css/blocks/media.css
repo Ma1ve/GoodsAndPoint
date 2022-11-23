@@ -34,7 +34,7 @@
 
   .header__title {
     width: auto;
-    margin: 0;
+    margin: 0 20px;
   }
 
   .basket__missing-wrapper_right {
@@ -54,15 +54,6 @@
   .basket__missing-wrapper_left {
     position: relative;
   }
-
-  /* .basket__form-input {
-    width: 160px;
-  }
-
-  .basket__input-name,
-  .basket__input-surname {
-    width: 200px;
-  } */
 
   .basket__form-input {
     margin-top: 30px;
@@ -108,5 +99,106 @@
 
   .basket__input-telephone {
     margin-top: 16px;
+  }
+
+  .basket__way-paragraph {
+    flex-direction: column;
+  }
+
+  .basket__way {
+    height: 512px;
+  }
+
+  .basket__way-products {
+    margin-top: 12px;
+  }
+
+  .basket__order {
+    background: none;
+    box-shadow: none;
+    /* padding: 24px; */
+    height: auto;
+  }
+
+  .basket__reverse-wrapper,
+  .basket__payment-block {
+    background: #f0ecf4;
+  }
+
+  .basket__paragraph-wrapper,
+  .basket__paragraph-text,
+  .basket__paragraph-number,
+  .basket__payment-wrapper,
+  .basket__card-wrapper {
+    display: none;
+  }
+
+  .basket__wrapper {
+    padding: 50px 30px 0 30px;
+  }
+
+  .header__hamburger-mobile {
+    display: flex;
+  }
+
+  .header__magnifying-glass-mobile,
+  .header__hamburger-mobile {
+    display: flex !important;
+  }
+
+  .header__wrapper {
+    margin: 0px 13px;
+  }
+}
+
+@media (max-width: 450px) {
+  .basket__description,
+  .basket__missing-description {
+    width: 190px;
+  }
+
+  .basket__sum {
+    font-size: 16px;
+  }
+
+  .basket__description-title,
+  .basket__way-text-desc {
+    font-size: 13px;
+  }
+
+  .basket__discount {
+    font-size: 12px;
+  }
+
+  .basket__way-text-desc,
+  .basket__way-text-time {
+    margin-top: 4px;
+  }
+
+  .basket__way-reverse,
+  .basket__way-text-time {
+    font-size: 12px;
+  }
+
+  .basket__way {
+    height: 512px;
+  }
+
+  .basket__way-title {
+    font-size: 17px;
+  }
+
+  .basket__way-choice,
+  .basket__option-change {
+    font-size: 14px;
+  }
+
+  .basket__option-title {
+    font-size: 17px;
+  }
+
+  .header__title {
+    font-size: 18px;
+    margin: 0 10px;
   }
 }
