@@ -547,7 +547,7 @@ basket__contacts-form-group {
 }
 
 .basket__contacts-form {
-  width: 700px;
+  max-width: 700px;
 }
 
 .basket__input-inn-text {

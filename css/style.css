@@ -1,6 +1,7 @@
 @import './blocks/header.css';
 @import './blocks/title.css';
 @import './blocks/basket.css';
+@import './blocks/mobile.css';
 @import 'blocks/media.css';
 
 * {
@@ -95,3 +96,9 @@ button:hover {
   margin-top: 25px;
   color: rgba(255, 255, 255, 0.7);
 }
+
+input.error {
+  border-color: red;
+}
+
+/* .checkbox */
