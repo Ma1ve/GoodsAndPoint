@@ -1,9 +1,25 @@
 let form = document.querySelector('.js-form'),
   formInputs = document.querySelectorAll('.js-input'),
+  inputName = document.querySelector('.js-input-name'),
+  inputSurname = document.querySelector('.js-input-surname'),
   inputEmail = document.querySelector('.js-input-email'),
   inputPhone = document.querySelector('.js-input-phone'),
   inputIndex = document.querySelector('.js-input-index'),
-  inputCheckbox = document.querySelector('.js-input-checkbox');
+  inputCheckbox = document.querySelector('.js-input-checkbox'),
+  customCheckbox = document.querySelector('.js-custom-checkbox');
+
+// const inputMask = new Inputmask('+7 (999) 999-99-99');
+// inputMask.mask(inputPhone);
+
+let btnActive = document.querySelector('.basket__access-btn');
+
+inputCheckbox.addEventListener('change', function () {
+  if (this.checked) {
+    btnActive.classList.add('basket__access-btn-active');
+  } else {
+    btnActive.classList.remove('basket__access-btn-active');
+  }
+});
 
 function validateEmail(email) {
   let valid =
@@ -17,13 +33,18 @@ function validatePhone(phone) {
 }
 
 function validateIndex(index) {
-  let valid = /^\d{5}(?:[-\s]\d{4})?$/;
+  let valid = /^[0-9\s]*$/;
   return valid.test(String(index));
 }
 
-form.onsubmit = () => {
+function setErrorFor(input, message) {} // SETERROR
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
   let emailVal = inputEmail.value,
     phoneVal = inputPhone.value,
+    indexVal = inputIndex.value,
     emptyInputs = Array.from(formInputs).filter((input) => input.value === '');
 
   formInputs.forEach((input) => {
@@ -35,24 +56,44 @@ form.onsubmit = () => {
     }
   });
 
-  if (emptyInputs.length !== 0) {
-    console.log('input');
+  if (!validateEmail(emailVal) || emailVal === '') {
+    inputEmail.classList.add('error');
+    setError(inputEmail, 'Проверьте адрес электронной почты');
+    // inputEmail.style.color = 'red';
     return false;
-  }
-
-  if (!validateEmail(emailVal)) {
-    console.log('email not valid');
-    return false;
+  } else {
+    // setSuccessFor(inputEmail);
+    inputEmail.classList.remove('error');
+    // inputEmail.style.color = 'black';
   }
 
   if (!validatePhone(phoneVal)) {
-    console.log('phone');
+    inputPhone.classList.add('error');
+
     return false;
+  } else {
+    inputPhone.classList.remove('error');
   }
 
-  // if (!validateIndex(phoneVal)) {
-  //   console.log('index');
-  //   return false;
-  // }
-};
+  if (!validateIndex(indexVal)) {
+    inputIndex.classList.add('error');
 
+    return false;
+  } else {
+    inputIndex.classList.remove('error');
+  }
+
+  if (!inputCheckbox.checked) {
+    console.log(inputCheckbox.checked);
+    customCheckbox.classList.add('checkbox-error');
+    return false;
+  } else {
+    customCheckbox.classList.remove('checkbox-error');
+  }
+
+  // if (!emptyInputs !== 0) {
+  //   emptyInputs.forEach((item) => {
+  //     item.classList.add('error');
+  //   });
+  // }
+});

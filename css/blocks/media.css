@@ -17,15 +17,15 @@
 }
 
 @media (max-width: 800px) {
-  .basket__blocks,
-  .basket__missing-blocks,
+  /* .basket__blocks, */
+  /*  .basket__missing-blocks, */
   .header__input,
   .header__icons,
-  .header__hamburger {
+  .header__hamburger,
+  .basket__missing-desc {
     display: none;
   }
 
-  .basket__blocks-mobile,
   .basket__missing-blocks-mobile,
   .header__magnifying-glass-mobile,
   .header__hamburger-mobile,
@@ -34,8 +34,26 @@
     display: block;
   }
 
+  .basket__blocks-mobile {
+    display: none;
+  }
+
+  .basket__missing-title-dn-1 {
+    display: none;
+  }
+
+  .basket__missing-title-dn-2 {
+    display: block;
+  }
+
   .basket__choice-wrapper {
     margin-left: 4px;
+  }
+
+  .basket__missing-mobile-size,
+  .basket__wrapper-pencils-absolute {
+    /* display: block; */
+    display: flex;
   }
 
   .basket__way-decs_absolute {
@@ -166,6 +184,60 @@
 
   .header__wrapper {
     margin: 0px 13px;
+  }
+
+  .basket__block-wrapper {
+    position: relative;
+  }
+
+  .basket__counter-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .basket__sum-wrapper-dn2 {
+    display: none;
+  }
+
+  .basket__counter-mobile {
+    width: 80px;
+    height: 32px;
+  }
+
+  .basket__sum-wrapper-dn1 {
+    display: flex;
+  }
+
+  .basket__choice-label_absolute {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+
+  .basket__block {
+    flex-direction: column;
+  }
+
+  .basket__wrapper-mobile-left {
+    display: flex;
+  }
+
+  .basket__left {
+    margin-left: 16px;
+  }
+
+  .basket__counter-wrapper {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+
+  .basket__company-wrapper {
+    display: none;
+  }
+
+  .basket__discount {
+    margin-left: 5px;
   }
 }
 

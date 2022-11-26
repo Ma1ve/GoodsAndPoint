@@ -16,7 +16,7 @@
       <div class="modal">
         <div class="modal-wrapper">
           <div class="modal__title title_fz20 basket__title_fw700">Способ оплаты</div>
-          <div class="modal__close cursor-pointer">&times;</div>
+          <div data-close-payment class="modal__close cursor-pointer">&times;</div>
         </div>
         <div class="modal-wrapper__choice">
           <div class="modal-wrapper__choice-block">
@@ -81,7 +81,7 @@
       <div class="modal modal-2">
         <div class="modal-wrapper">
           <div class="modal__title title_fz20 basket__title_fw700">Способ доставки</div>
-          <div class="modal__close cursor-pointer">&times;</div>
+          <div data-close-delivery class="modal__close cursor-pointer">&times;</div>
         </div>
         <div class="modal__btn-choive-wrapper">
           <div class="modal-choice__btn modal__extradition">В пункт выдачи</div>
@@ -116,7 +116,7 @@
                   </div>
                 </div>
               </label>
-              <img src="./img/icons/trash-can.svg" alt="trash" />
+              <img class="trash-can-modal" src="./img/icons/trash-can.svg" alt="trash" />
             </div>
             <div class="modal-wrapper__choice-block">
               <label class="modal-label">
@@ -145,7 +145,7 @@
                   </div>
                 </div>
               </label>
-              <img src="./img/icons/trash-can.svg" alt="trash" />
+              <img class="trash-can-modal" src="./img/icons/trash-can.svg" alt="trash" />
             </div>
             <div class="modal-wrapper__choice-block">
               <label class="modal-label">
@@ -173,7 +173,7 @@
                   </div>
                 </div>
               </label>
-              <img src="./img/icons/trash-can.svg" alt="trash" />
+              <img class="trash-can-modal" src="./img/icons/trash-can.svg" alt="trash" />
             </div>
           </div>
           <button class="modal-btn modal-2__btn">Выбрать</button>
@@ -243,7 +243,7 @@
                     <span class="custom-checkbox"></span>
                     Выбрать все
                   </label>
-                  <!-- <div class="basket__choice-title">Выбрать все</div> -->
+                  <div class="basket__choice-title">266 товаров · 2 100 569 сом</div>
                 </div>
                 <img
                   class="basket__choice-img"
@@ -255,12 +255,34 @@
               <div class="basket__blocks">
                 <div class="basket__block">
                   <div class="basket__block-wrapper">
-                    <label class="basket__choice-label">
+                    <label class="basket__choice-label basket__choice-label_absolute">
                       <input type="checkbox" class="real-checkbox checkbox-js" />
                       <span class="custom-checkbox"></span>
                     </label>
-                    <img class="basket__logo-img" src="./img/t-shirt.png" alt="t-shirt" />
+
+                    <img
+                      class="basket__logo-img basket__logo-img-mobile"
+                      src="./img/t-shirt.png"
+                      alt="t-shirt"
+                    />
+
                     <div class="basket__description">
+                      <div class="basket__sum-wrapper basket__sum-wrapper-dn1">
+                        <div class="basket__sum title_fz20"><span>522</span> сом</div>
+                        <div class="basket__discount-wrapper-info">
+                          <div class="basket__discount title_fz13"><span>1051</span> сом</div>
+                          <div class="basket__discount_absolute">
+                            <div class="basket__discount-block">
+                              <div class="basket__discount-info">Скидка 55%</div>
+                              <div class="basket__discount-number">−300 сом</div>
+                            </div>
+                            <div class="basket__discount-block basket__discount-block_mt8">
+                              <div class="basket__discount-info">Скидка покупателя 10%</div>
+                              <div class="basket__discount-number">−30 сом</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                       <div class="basket__description-title title_fz16">
                         Футболка UZcotton мужская
                       </div>
@@ -293,26 +315,28 @@
                   </div>
                   <div class="basket__wrapper-sum">
                     <div class="basket__counter-wrapper">
-                      <div class="basket__counter">
-                        <div class="basket__counter-btn" data-action="minus">
-                          <img src="./img/icons/minus.svg" alt="minus" />
+                      <div class="basket__wrapper-mobile-left">
+                        <div class="basket__counter basket__counter-mobile">
+                          <div class="basket__counter-btn" data-action="minus">
+                            <img src="./img/icons/minus.svg" alt="minus" />
+                          </div>
+                          <div class="basket__count title_fz16">3</div>
+                          <div class="basket__counter-btn" data-action="plus">
+                            <img src="./img/icons/plus.svg" alt="plus" />
+                          </div>
                         </div>
-                        <div class="basket__count title_fz16">3</div>
-                        <div class="basket__counter-btn" data-action="plus">
-                          <img src="./img/icons/plus.svg" alt="plus" />
-                        </div>
+                        <div class="basket__left title_fz13">Осталось <span>2</span> шт.</div>
                       </div>
-                      <div class="basket__left title_fz13">Осталось <span>2</span> шт.</div>
                       <div class="basket__icons-wrapper">
                         <img class="basket__icon" src="./img/icons/heart.svg" alt="heart" />
                         <img
-                          class="basket__icon basket__icon_ml16"
+                          class="basket__icon basket__icon_ml16 trash-can"
                           src="./img/icons/trash-can.svg"
                           alt="trash"
                         />
                       </div>
                     </div>
-                    <div class="basket__sum-wrapper">
+                    <div class="basket__sum-wrapper basket__sum-wrapper-dn2">
                       <div class="basket__sum title_fz20"><span>522</span> сом</div>
                       <div class="basket__discount-wrapper-info">
                         <div class="basket__discount title_fz13"><span>1051</span> сом</div>
@@ -333,16 +357,47 @@
 
                 <div class="basket__block">
                   <div class="basket__block-wrapper">
-                    <label class="basket__choice-label">
+                    <label class="basket__choice-label basket__choice-label_absolute">
                       <input type="checkbox" class="real-checkbox checkbox-js" />
                       <span class="custom-checkbox"></span>
                     </label>
-                    <img class="basket__logo-img" src="./img/case.png" alt="t-shirt" />
+                    <img
+                      class="basket__logo-img basket__logo-img-mobile"
+                      src="./img/case.png"
+                      alt="t-shirt"
+                    />
                     <div class="basket__description">
-                      <div class="basket__description-title title_fz16">
-                        Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на
-                        Apple iPhone XR, MobiSafe
+                      <div class="basket__sum-wrapper basket__sum-wrapper-dn1">
+                        <div class="basket__sum title_fz20"><span>2 100 047</span> сом</div>
+                        <div class="basket__discount-wrapper-info">
+                          <div class="basket__discount title_fz13"><span>2 300 047</span> сом</div>
+                          <div class="basket__discount_absolute">
+                            <div class="basket__discount-block">
+                              <div class="basket__discount-info">Скидка 55%</div>
+                              <div class="basket__discount-number">−300 сом</div>
+                            </div>
+                            <div class="basket__discount-block basket__discount-block_mt8">
+                              <div class="basket__discount-info">Скидка покупателя 10%</div>
+                              <div class="basket__discount-number">−30 сом</div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
+
+                      <div class="basket__missing-description-wrapper">
+                        <div
+                          class="basket__missing-title title_fz16 basket__wrapper_fw600 basket__missing-title-dn-1"
+                        >
+                          Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер
+                          на Apple iPhone XR, MobiSafe
+                        </div>
+                        <div
+                          class="basket__missing-title title_fz16 basket__wrapper_fw600 basket__missing-title-dn-2"
+                        >
+                          Силиконовый чехол картхолдер (отверстия) для...
+                        </div>
+                      </div>
+
                       <div class="basket__description-block">
                         <div class="basket__text title_fz13">Цвет: прозрачный</div>
                         <!-- <div class="basket__text basket__text_ml16 title_fz13">Размер: 56</div> -->
@@ -371,8 +426,9 @@
                     </div>
                   </div>
                   <div class="basket__wrapper-sum">
-                    <div class="basket__counter-wrapper">
-                      <div class="basket__counter">
+                    <div class="basket__counter-wrapper basket__counter-wrapper-w87">
+                      <div class="basket__counter basket__counter-mobile">
+                        <!-- 1233 -->
                         <div class="basket__counter-btn" data-action="minus">
                           <img src="./img/icons/minus.svg" alt="minus" />
                         </div>
@@ -381,17 +437,17 @@
                           <img src="./img/icons/plus.svg" alt="plus" />
                         </div>
                       </div>
-                      <!-- <div class="basket__left title_fz13">Осталось <span>2</span> шт.</div> -->
+
                       <div class="basket__icons-wrapper">
                         <img class="basket__icon" src="./img/icons/heart.svg" alt="heart" />
                         <img
-                          class="basket__icon basket__icon_ml16"
+                          class="basket__icon basket__icon_ml16 trash-can"
                           src="./img/icons/trash-can.svg"
                           alt="trash"
                         />
                       </div>
                     </div>
-                    <div class="basket__sum-wrapper">
+                    <div class="basket__sum-wrapper basket__sum-wrapper-dn2">
                       <div class="basket__sum title_fz20"><span>2 100 047</span> сом</div>
                       <div class="basket__discount-wrapper-info">
                         <div class="basket__discount title_fz13"><span>2 300 047</span> сом</div>
@@ -412,17 +468,47 @@
 
                 <div class="basket__block">
                   <div class="basket__block-wrapper">
-                    <label class="basket__choice-label">
+                    <label class="basket__choice-label basket__choice-label_absolute">
                       <input type="checkbox" class="real-checkbox checkbox-js" />
                       <span class="custom-checkbox"></span>
                     </label>
-                    <img class="basket__logo-img" src="./img/pencils.png" alt="t-shirt" />
+                    <img
+                      class="basket__logo-img basket__logo-img-mobile"
+                      src="./img/pencils.png"
+                      alt="t-shirt"
+                    />
                     <div class="basket__description">
-                      <div class="basket__description-title title_fz16">
-                        Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
-                        шестигранные,<br />
-                        Faber-Castell
+                      <div class="basket__sum-wrapper basket__sum-wrapper-dn1">
+                        <div class="basket__sum title_fz20"><span>494</span> сом</div>
+                        <div class="basket__discount-wrapper-info">
+                          <div class="basket__discount title_fz13"><span>950</span> сом</div>
+                          <div class="basket__discount_absolute">
+                            <div class="basket__discount-block">
+                              <div class="basket__discount-info">Скидка 55%</div>
+                              <div class="basket__discount-number">−300 сом</div>
+                            </div>
+                            <div class="basket__discount-block basket__discount-block_mt8">
+                              <div class="basket__discount-info">Скидка покупателя 10%</div>
+                              <div class="basket__discount-number">−30 сом</div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
+                      <div class="basket__missing-description-wrapper">
+                        <div
+                          class="basket__missing-title title_fz16 basket__wrapper_fw600 basket__missing-title-dn-1"
+                        >
+                          Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
+                          шестигранные,<br />
+                          Faber-Castell
+                        </div>
+                        <div
+                          class="basket__missing-title title_fz16 basket__wrapper_fw600 basket__missing-title-dn-2"
+                        >
+                          Карандаши цветные Faber-Castell "Замок", набор 24 цв...
+                        </div>
+                      </div>
+
                       <!-- <div class="basket__description-block">
                       <div class="basket__text title_fz13">Цвет: прозрачный</div>
                     </div> -->
@@ -451,20 +537,23 @@
                   </div>
                   <div class="basket__wrapper-sum">
                     <div class="basket__counter-wrapper">
-                      <div class="basket__counter">
-                        <div class="basket__counter-btn" data-action="minus">
-                          <img src="./img/icons/minus.svg" alt="minus" />
+                      <div class="basket__wrapper-mobile-left">
+                        <div class="basket__counter basket__counter-mobile">
+                          <div class="basket__counter-btn" data-action="minus">
+                            <img src="./img/icons/minus.svg" alt="minus" />
+                          </div>
+                          <div class="basket__count title_fz16">3</div>
+                          <div class="basket__counter-btn" data-action="plus">
+                            <img src="./img/icons/plus.svg" alt="plus" />
+                          </div>
                         </div>
-                        <div class="basket__count title_fz16">3</div>
-                        <div class="basket__counter-btn" data-action="plus">
-                          <img src="./img/icons/plus.svg" alt="plus" />
-                        </div>
+                        <div class="basket__left title_fz13">Осталось <span>2</span> шт.</div>
                       </div>
-                      <div class="basket__left title_fz13">Осталось <span>2</span> шт.</div>
+
                       <div class="basket__icons-wrapper">
                         <img class="basket__icon" src="./img/icons/heart.svg" alt="heart" />
                         <img
-                          class="basket__icon basket__icon_ml16"
+                          class="basket__icon basket__icon_ml16 trash-can"
                           src="./img/icons/trash-can.svg"
                           alt="trash"
                         />
@@ -496,7 +585,7 @@
                       </svg> -->
                       </div>
                     </div>
-                    <div class="basket__sum-wrapper">
+                    <div class="basket__sum-wrapper basket__sum-wrapper-dn2">
                       <div class="basket__sum title_fz20"><span>494</span> сом</div>
                       <div class="basket__discount-wrapper-info">
                         <div class="basket__discount title_fz13"><span>950</span> сом</div>
@@ -570,7 +659,7 @@
                       <div class="basket__icons-wrapper">
                         <img class="basket__icon" src="./img/icons/heart.svg" alt="heart" />
                         <img
-                          class="basket__icon basket__icon_ml16"
+                          class="basket__icon basket__icon_ml16 trash-can"
                           src="./img/icons/trash-can.svg"
                           alt="trash"
                         />
@@ -629,7 +718,7 @@
                       <div class="basket__icons-wrapper">
                         <img class="basket__icon" src="./img/icons/heart.svg" alt="heart" />
                         <img
-                          class="basket__icon basket__icon_ml16"
+                          class="basket__icon basket__icon_ml16 trash-can"
                           src="./img/icons/trash-can.svg"
                           alt="trash"
                         />
@@ -691,7 +780,7 @@
                       <div class="basket__icons-wrapper">
                         <img class="basket__icon" src="./img/icons/heart.svg" alt="heart" />
                         <img
-                          class="basket__icon basket__icon_ml16"
+                          class="basket__icon basket__icon_ml16 trash-can"
                           src="./img/icons/trash-can.svg"
                           alt="trash"
                         />
@@ -701,8 +790,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- <div class="basket__blocks-mobile"></div> -->
 
             <div class="basket__missing">
               <div class="basket__missing_p16">
@@ -720,11 +807,15 @@
                 <div class="basket__blocks basket__missing-blocks">
                   <div class="basket__missing-block">
                     <div class="basket__missing-wrapper_left">
-                      <img
-                        class="basket__missing-img"
-                        src="./img/absent-t-shirt.png"
-                        alt="absent-t-shirt"
-                      />
+                      <div class="wrapper">
+                        <div class="basket__missing-mobile-size basket__missing-size-dn">56</div>
+                        <img
+                          class="basket__missing-img"
+                          src="./img/absent-t-shirt.png"
+                          alt="absent-t-shirt"
+                        />
+                      </div>
+
                       <div class="basket__missing-description basket__text_ml16">
                         <div class="basket__missing-title title_fz16 basket__wrapper_fw600">
                           Футболка UZcotton мужская
@@ -739,10 +830,12 @@
                       <div class="basket__missing-icons">
                         <img class="basket__missing-icon" src="./img/icons/heart.svg" alt="heart" />
                         <img
-                          class="basket__missing-icon basket__icon_ml16"
+                          data-id
+                          class="basket__missing-icon basket__icon_ml16 trash-can"
                           src="./img/icons/trash-can.svg"
                           alt="trash"
                         />
+                        <!-- d1 -->
                       </div>
                       <div class="basket__missing-buffer"></div>
                     </div>
@@ -750,16 +843,22 @@
 
                   <div class="basket__missing-block">
                     <div class="basket__missing-wrapper_left">
-                      <img
-                        class="basket__missing-img"
-                        src="./img/absent-case.png"
-                        alt="absent-t-shirt"
-                      />
+                      <img class="basket__missing-img" src="./img/absent-case.png" alt="case" />
                       <div class="basket__missing-description basket__text_ml16">
-                        <div class="basket__missing-title title_fz16 basket__wrapper_fw600">
-                          Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер
-                          на Apple iPhone XR, MobiSafe
+                        <div class="basket__missing-description-wrapper">
+                          <div
+                            class="basket__missing-title title_fz16 basket__wrapper_fw600 basket__missing-title-dn-1"
+                          >
+                            Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс
+                            бампер на Apple iPhone XR, MobiSafe
+                          </div>
+                          <div
+                            class="basket__missing-title title_fz16 basket__wrapper_fw600 basket__missing-title-dn-2"
+                          >
+                            Силиконовый чехол картхолдер (отверстия) для...
+                          </div>
                         </div>
+
                         <div class="basket__missing-text title_fz13">
                           <div class="basket__missing-desc">Цвет: прозрачный</div>
                           <!-- <div class="basket__missing-desc basket__text_ml16">Размер: 56</div> -->
@@ -770,38 +869,49 @@
                       <div class="basket__missing-icons">
                         <img class="basket__missing-icon" src="./img/icons/heart.svg" alt="heart" />
                         <img
-                          class="basket__missing-icon basket__icon_ml16"
+                          data-id
+                          class="basket__missing-icon basket__icon_ml16 trash-can"
                           src="./img/icons/trash-can.svg"
                           alt="trash"
                         />
                       </div>
+                      <!-- d1 -->
                       <div class="basket__missing-buffer"></div>
                     </div>
                   </div>
 
                   <div class="basket__missing-block">
                     <div class="basket__missing-wrapper_left">
-                      <img
-                        class="basket__missing-img"
-                        src="./img/absent-pencils.png"
-                        alt="absent-t-shirt"
-                      />
+                      <div class="basket__wrapper-pencils">
+                        <div class="basket__wrapper-pencils-absolute">56/54/52...</div>
+                        <img
+                          class="basket__missing-img"
+                          src="./img/absent-pencils.png"
+                          alt="pencils"
+                        />
+                      </div>
+
                       <div class="basket__missing-description basket__text_ml16">
-                        <div class="basket__missing-title title_fz16 basket__wrapper_fw600">
-                          Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
-                          шестигранные, Faber-Castell
+                        <div class="basket__missing-description-wrapper">
+                          <div
+                            class="basket__missing-title title_fz16 basket__wrapper_fw600 basket__missing-title-dn-1"
+                          >
+                            Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
+                            шестигранные, Faber-Castell
+                          </div>
+                          <div
+                            class="basket__missing-title title_fz16 basket__wrapper_fw600 basket__missing-title-dn-2"
+                          >
+                            Карандаши цветные Faber-Castell "Замок", набор 24 цв...
+                          </div>
                         </div>
-                        <!-- <div class="basket__missing-text title_fz13">
-                        <div class="basket__missing-desc">Цвет: белый</div>
-                        <div class="basket__missing-desc basket__text_ml16">Размер: 56</div>
-                      </div> -->
                       </div>
                     </div>
                     <div class="basket__missing-wrapper_right">
                       <div class="basket__missing-icons">
                         <img class="basket__missing-icon" src="./img/icons/heart.svg" alt="heart" />
                         <img
-                          class="basket__missing-icon basket__icon_ml16"
+                          class="basket__missing-icon basket__icon_ml16 trash-can"
                           src="./img/icons/trash-can.svg"
                           alt="trash"
                         />
@@ -811,7 +921,7 @@
                   </div>
                 </div>
 
-                <div class="basket__missing-blocks-mobile">
+                <!--  <div class="basket__blocks-mobile basket__missing-blocks-mobile">
                   <div class="basket__missing-block">
                     <div class="basket__missing-wrapper_left">
                       <div class="basket__missing-wrapper-mobile">
@@ -820,6 +930,7 @@
                           src="./img/absent-t-shirt.png"
                           alt="absent-t-shirt"
                         />
+
                         <div class="basket__missing-size-mobile">56</div>
                       </div>
 
@@ -836,7 +947,7 @@
                       <div class="basket__missing-icons">
                         <img class="basket__missing-icon" src="./img/icons/heart.svg" alt="heart" />
                         <img
-                          class="basket__missing-icon basket__icon_ml16"
+                          class="basket__missing-icon basket__icon_ml16 trash-can"
                           src="./img/icons/trash-can.svg"
                           alt="trash"
                         />
@@ -857,7 +968,6 @@
                           Силиконовый чехол картхолдер (отверстия) для...
                         </div>
                         <div class="basket__missing-text title_fz13">
-                          absent-p
                           <div class="basket__missing-desc">Цвет: прозрачный</div>
                         </div>
                       </div>
@@ -879,7 +989,7 @@
                     <div class="basket__missing-wrapper_left">
                       <div class="basket__wrapper-mobile">
                         <div class="basket__missing-size-mobile-1">
-                          <!-- basket__missing-size-mobile -->
+                      
                           56/54/52...
                         </div>
                         <img
@@ -893,11 +1003,7 @@
                         <div class="basket__missing-title title_fz16 basket__wrapper_fw600">
                           Карандаши цветные Faber-Castell "Замок", набор 24 цв...
                         </div>
-                        <!-- 123 -->
-                        <!-- <div class="basket__missing-text title_fz13">
-                        <div class="basket__missing-desc">Цвет: белый</div>
-                        <div class="basket__missing-desc basket__text_ml16">Размер: 56</div>
-                      </div> -->
+                    
                       </div>
                     </div>
                     <div class="basket__missing-wrapper_right">
@@ -912,7 +1018,7 @@
                       <div class="basket__missing-buffer"></div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
 
               <div class="basket__way">
@@ -920,7 +1026,12 @@
                   <div class="basket__way-title title_fz24 basket__title_fw700">
                     Способ доставки
                   </div>
-                  <div class="basket__way-choice title_fz16 basket__title_fw700">Изменить</div>
+                  <div
+                    data-modal-delivery
+                    class="basket__way-choice title_fz16 basket__title_fw700"
+                  >
+                    Изменить
+                  </div>
                 </div>
                 <div class="basket__way-info">
                   <div class="basket__way-paragraph">
@@ -1005,7 +1116,10 @@
                   <div class="basket__option-title title_fz24 basket__title_fw700">
                     Способ оплаты
                   </div>
-                  <div class="basket__option-change title_fz16 basket__title_fw700 cursor-pointer">
+                  <div
+                    data-modal-payment
+                    class="basket__option-change title_fz16 basket__title_fw700 cursor-pointer"
+                  >
                     Изменить
                   </div>
                 </div>
@@ -1024,45 +1138,67 @@
                 <div class="basket__contacts-block">
                   <form id="form" action="#" class="basket__contacts-form js-form">
                     <div class="basket__form-wrapper basket__form-wrapper-mobile">
-                      <input
-                        class="basket__form-input basket__input-name js-input"
-                        placeholder="Имя"
-                        type="text"
-                        name="name"
-                      />
-                      <input
-                        class="basket__form-input basket__input-surname js-input"
-                        placeholder="Фамилия"
-                        type="text"
-                        name="last name"
-                      />
-                    </div>
-                    <div class="basket__form-wrapper basket__form-wrapper-mobile-1">
-                      <input
-                        class="basket__form-input basket__input-email js-input js-input-email"
-                        placeholder="Почта"
-                        type="email"
-                        name="email"
-                      />
-                      <div class="basket__input-telephone-wrapper">
+                      <div class="form-control">
                         <input
-                          id="telephone"
-                          class="basket__form-input basket__input-telephone js-input js-input-phone"
-                          placeholder="+7 (988) 123-45-67"
-                          type="telephone"
-                          name="phone"
+                          class="basket__form-input basket__input-name js-input js-input-name"
+                          placeholder="Имя"
+                          type="text"
+                          name="name"
+                          data-validate-field="name"
                         />
-                        <label class="basket__label-telephone" for="telephone">Телефон</label>
+
+                        <div class="form__error-message">Error</div>
                       </div>
 
-                      <div class="basket__input-inn-wrapper">
+                      <div class="form-control">
                         <input
-                          class="basket__form-input basket__input-inn js-input js-input-index"
-                          placeholder="ИНН"
+                          class="basket__form-input basket__input-surname js-input js-input-surname"
+                          placeholder="Фамилия"
                           type="text"
-                          name="index"
+                          name="surname"
+                          data-validate-field="surname"
                         />
-                        <div class="basket__input-inn-text">Для таможенного оформления</div>
+                        <div class="form__error-message">Error</div>
+                      </div>
+                    </div>
+                    <div class="basket__form-wrapper basket__form-wrapper-mobile-1">
+                      <div class="form-control">
+                        <input
+                          class="basket__form-input basket__input-email js-input js-input-email"
+                          placeholder="Почта"
+                          type="email"
+                          name="email"
+                          data-validate-field="email"
+                        />
+                        <div class="form__error-message">Error</div>
+                      </div>
+
+                      <div class="form-control">
+                        <div class="basket__input-telephone-wrapper">
+                          <input
+                            id="telephone"
+                            class="basket__form-input basket__input-telephone js-input js-input-phone"
+                            placeholder="+7 (988) 123-45-67"
+                            type="telephone"
+                            name="phone"
+                            data-validate-field="tel"
+                          />
+                          <label class="basket__label-telephone" for="telephone">Телефон</label>
+                        </div>
+                        <div class="form__error-message">Error</div>
+                      </div>
+                      <div class="form-control">
+                        <div class="basket__input-inn-wrapper">
+                          <input
+                            class="basket__form-input basket__input-inn js-input js-input-index"
+                            placeholder="ИНН"
+                            type="text"
+                            name="index"
+                            data-validate-field="index"
+                          />
+                          <div class="form__error-message form__error-message_b-20">Error</div>
+                          <div class="basket__input-inn-text">Для таможенного оформления</div>
+                        </div>
                       </div>
                     </div>
                   </form>
@@ -1103,6 +1239,7 @@
                       Доставка в пункт выдачи
                     </div>
                     <img
+                      data-modal-delivery
                       class="basket__paragraph-pencil"
                       src="./img/icons/pencil.svg"
                       alt="pencil"
@@ -1135,6 +1272,7 @@
                         Оплата картой
                       </div>
                       <img
+                        data-modal-payment
                         class="basket__paragraph-pencil"
                         src="./img/icons/pencil.svg"
                         alt="pencil"
@@ -1153,9 +1291,12 @@
                         <label
                           class="basket__choice-label basket__payment-label basket__wrapper_fw600"
                         >
-                          <input type="checkbox" class="real-checkbox checkbox-payment" />
+                          <input
+                            type="checkbox"
+                            class="real-checkbox checkbox-payment js-input-checkbox"
+                          />
                           <span
-                            class="custom-checkbox basket__payment-custom-checkbox js-input-checkbox"
+                            class="custom-checkbox basket__payment-custom-checkbox js-custom-checkbox"
                           ></span>
                           Списать оплату сразу
                         </label>
@@ -1205,7 +1346,9 @@
       </div>
     </div>
 
+    <script src="js/libs/inputmask.min.js"></script>
     <script src="js/form.js"></script>
     <script src="js/arrows.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>

@@ -26,7 +26,7 @@ button {
 }
 
 /* button:hover {
-  transform: scale(102%);
+  
 } */
 
 .container {
@@ -132,10 +132,36 @@ input.error {
   border-color: red;
 }
 
+.checkbox-error {
+  border: 1px solid red;
+}
+
 .basket__blocks-active {
   /* display: none; */
   height: 0;
   opacity: 0;
   overflow: hidden;
   transition: 0.3s;
+}
+
+.open {
+  display: block;
+}
+
+.trash-can-modal {
+  cursor: pointer;
+}
+
+.form-control {
+  position: relative;
+}
+
+.form__error-message {
+  visibility: hidden;
+  position: absolute;
+  font-size: 13px;
+}
+
+.form__error-message_b-20 {
+  bottom: -17px;
 }

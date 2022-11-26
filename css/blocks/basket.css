@@ -138,6 +138,7 @@
   top: 25px;
   padding: 10px 16px;
   border-radius: 8px;
+  z-index: 10;
 }
 
 .basket__company-img:hover + .basket__company-img-info {
@@ -153,6 +154,7 @@
 }
 
 .basket__discount_absolute {
+  display: none;
   opacity: 0;
   transition: 0.2s;
   position: absolute;
@@ -169,6 +171,7 @@
 
 .basket__discount:hover + .basket__discount_absolute {
   opacity: 1;
+  display: block;
 }
 
 .basket__discount-block {
@@ -272,9 +275,13 @@
   cursor: pointer;
 }
 
+.basket__counter-mobile {
+}
+
 .basket__icons-wrapper {
   display: flex;
   justify-content: right;
+  /* margin-left: 26px; */
   margin-top: 8px;
 }
 
@@ -673,9 +680,9 @@ basket__contacts-form-group {
   font-size: 16px;
 }
 
-.basket__form-input:focus {
+/* .basket__form-input:focus {
   border-bottom: 1px solid #6725a8;
-}
+} */
 /* ~ .basket__form-input */
 /* .basket__form-input:focus ~ .basket__form-input {
   top: -30px;
@@ -686,9 +693,9 @@ basket__contacts-form-group {
   margin-top: 35px;
 }
 
-.basket__input-surname {
+/* .basket__input-surname {
   margin-left: 24px;
-}
+} */
 
 .basket__input-email,
 .basket__input-telephone,
@@ -715,7 +722,7 @@ basket__contacts-form-group {
 }
 
 .basket__input-telephone::placeholder {
-  color: #000;
+  color: #a0a0a4;
 }
 
 .basket__input-telephone-wrapper {
@@ -727,4 +734,73 @@ basket__contacts-form-group {
   left: 0;
   top: -20px;
   color: #a0a0a4;
+}
+
+.basket__blocks-mobile {
+  height: 100%;
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.basket__choice-title {
+  display: none;
+  font-weight: 700;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.basket__missing-mobile-size {
+  display: none;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 6px;
+  bottom: 10px;
+  left: 5px;
+  /* display: flex !important; */
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.basket__missing-title-dn-2 {
+  display: none;
+}
+
+.basket__wrapper-pencils {
+  position: relative;
+}
+
+.basket__wrapper-pencils-absolute {
+  display: none;
+  position: absolute;
+  width: 66px;
+  height: 20px;
+  background: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 6px;
+  bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+.basket__blocks-mobile {
+  display: none;
+}
+
+.basket__sum-wrapper-dn1 {
+  display: none;
+}
+
+.basket__counter-wrapper {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.basket__wrapper-mobile-left {
 }
