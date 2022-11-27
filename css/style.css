@@ -157,9 +157,10 @@ input.error {
 }
 
 .form__error-message {
-  visibility: hidden;
+  display: none;
   position: absolute;
-  font-size: 13px;
+  font-size: 12px;
+  color: red;
 }
 
 .form__error-message_b-20 {

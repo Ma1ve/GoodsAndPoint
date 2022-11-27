@@ -427,7 +427,7 @@
 .basket__access-btn {
   width: 100%;
   height: 44px;
-  background: #9e9e9e;
+  background: #cb11ab;
 }
 
 .basket__access-btn-active {
@@ -626,6 +626,11 @@ basket__missing-buffer {
   padding: 16px 24px;
 }
 
+.basket__option-card-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .basket__option-payment-wrapper {
   align-items: center;
 }
@@ -637,11 +642,16 @@ basket__missing-buffer {
 .basket__option-card {
   margin-top: 16px;
   display: flex;
+  align-items: center;
 }
 
 .basket__option-explanation {
   margin-top: 8px;
   color: #a0a0a4;
+}
+
+.choice-block__wrapper {
+  max-width: 400px;
 }
 
 .basket__option-card-number {
@@ -797,10 +807,15 @@ basket__contacts-form-group {
   display: none;
 }
 
-.basket__counter-wrapper {
-  /* display: flex;
-  flex-direction: column; */
+.basket__icons-hearts,
+.basket__icons-baskets {
+  display: flex;
 }
 
-.basket__wrapper-mobile-left {
+.basket__icon_dn {
+  display: none;
+}
+
+.trash-can {
+  width: 20px;
 }

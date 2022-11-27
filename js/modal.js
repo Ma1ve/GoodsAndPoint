@@ -81,10 +81,119 @@ tabsParent.addEventListener('click', (e) => {
 
 // Delete items modal
 
-let trashCanDelete = document.querySelectorAll('.trash-can-modal');
+let trashCanDelete = document.querySelectorAll('.basket__icons-baskets');
 
 trashCanDelete.forEach((btn) => {
   btn.addEventListener('click', () => {
+    console.log(btn.parentElement);
     btn.parentElement.remove();
   });
 });
+
+// RadioButtons payment
+const elementCard = document.querySelector('.basket__card-wrapper'),
+  elementCardMenu = document.querySelector('.basket__option-card-wrapper'),
+  btnPayment = document.querySelector('.modal-btn__card'),
+  radioButtonsPayment = document.getElementsByName('category-card');
+
+const elementDelivery = document.querySelector('.basket__paragraph-text-wrapper'),
+  elementDeliveryMenu = document.querySelector('.basket__way-text-desc'),
+  btnDelivery = document.querySelector('.modal-btn__delivery'),
+  radioButtonsDelivery = document.getElementsByName('category-address');
+
+function changeCard(value) {
+  elementCard.innerHTML = `
+    <img src="./img/icons/${value}.svg" alt="card" class="basket__payment-img" />
+      <div
+        class="basket__card-number basket__text_ml8 title_fz13 basket__wrapper_fw600"
+      >
+        1234 12•• •••• 1234
+    </div>
+  `;
+
+  elementCardMenu.innerHTML = `
+    <img class="basket__option-img" src="./img/icons/${value}.svg" alt="card" />
+    <div class="basket__option-card-number">1234 56•• •••• 1234</div>
+  `;
+}
+
+function changePlaceValue(place) {
+  elementDelivery.innerHTML = `
+    <div class="basket__paragraph-text basket__wrapper_fw600 title_fz13">
+      ${place}
+    </div>`;
+
+  elementDeliveryMenu.innerHTML = `
+    <div class="basket__way-text-desc basket__text-delivery">
+      ${place}
+    </div>`;
+}
+
+function setChange(inputValue) {
+  switch (inputValue) {
+    case 'card': {
+      changeCard('card');
+      break;
+    }
+    case 'visa': {
+      changeCard('visa');
+      break;
+    }
+    case 'master-card-1': {
+      changeCard('master-card-1');
+      break;
+    }
+    case 'master-card-2': {
+      changeCard('master-card-2');
+      break;
+    }
+
+    default:
+      changeCard('card');
+      break;
+  }
+}
+
+function changePlace(inputValue) {
+  switch (inputValue) {
+    case 'tabyshalieva': {
+      console.log(1);
+      changePlaceValue('Бишкек, улица Табышалиева, 57');
+      break;
+    }
+    case 'zhukeeva': {
+      console.log(2);
+      changePlaceValue('Бишкек, улица Жукеева-Пудовкина, 77/1');
+      break;
+    }
+    case 'akhunbaeva': {
+      console.log(3);
+      changePlaceValue(' г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1');
+      break;
+    }
+
+    default:
+      break;
+  }
+}
+
+btnPayment.addEventListener('click', () => {
+  for (let i = 0; i < radioButtonsPayment.length; i++) {
+    if (radioButtonsPayment[i].checked) {
+      let change = radioButtonsPayment[i].value;
+      setChange(change);
+    }
+  }
+  closeModal();
+});
+
+btnDelivery.addEventListener('click', () => {
+  for (let i = 0; i < radioButtonsDelivery.length; i++) {
+    if (radioButtonsDelivery[i].checked) {
+      let place = radioButtonsDelivery[i].value;
+      changePlace(place);
+    }
+  }
+  closeModalDelivery();
+});
+// Radiobutton Delivery

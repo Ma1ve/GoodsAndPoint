@@ -8,24 +8,27 @@ let form = document.querySelector('.js-form'),
   inputCheckbox = document.querySelector('.js-input-checkbox'),
   customCheckbox = document.querySelector('.js-custom-checkbox');
 
-// const inputMask = new Inputmask('+7 (999) 999-99-99');
-// inputMask.mask(inputPhone);
+const inputMask = new Inputmask('+7 (999) 999-99-99');
+inputMask.mask(inputPhone);
 
-let btnActive = document.querySelector('.basket__access-btn');
+let btnActive = document.querySelector('.basket__access-btn'),
+  totalSum = document.querySelector('.basket__total-sum span');
+
+// console.log(totalSum.innerText);
+
+const normalPrice = (price) => {
+  return String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+};
 
 inputCheckbox.addEventListener('change', function () {
   if (this.checked) {
-    btnActive.classList.add('basket__access-btn-active');
+    // btnActive.classList.add('basket__access-btn-active');
+    btnActive.innerText = `Заказать ${normalPrice(totalSum.innerText.replace(/\s/g, ''))} сом`;
   } else {
-    btnActive.classList.remove('basket__access-btn-active');
+    // btnActive.classList.remove('basket__access-btn-active');
+    btnActive.innerText = `Оплатить`;
   }
 });
-
-function validateEmail(email) {
-  let valid =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return valid.test(String(email).toLowerCase());
-}
 
 function validatePhone(phone) {
   let valid = /^[0-9\s]*$/;
@@ -37,12 +40,35 @@ function validateIndex(index) {
   return valid.test(String(index));
 }
 
-function setErrorFor(input, message) {} // SETERROR
+function isEmail(email) {
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+    email,
+  );
+}
+
+function setErrorFor(input, message) {
+  const formControl = input.parentElement;
+  const error = formControl.querySelector('.form__error-message');
+  error.style.display = 'block';
+  error.innerText = message;
+  formControl.querySelector('.js-input').classList.add('error');
+  // formControl.querySelector('.js-input').style.color = 'red';
+} // SETERROR
+
+function setSuccessFor(input) {
+  const formControl = input.parentElement;
+  const error = formControl.querySelector('.form__error-message');
+  error.style.display = 'none';
+  formControl.querySelector('.js-input').classList.remove('error');
+  // formControl.querySelector('.js-input').style.color = 'black';
+}
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  let emailVal = inputEmail.value,
+  let nameVal = inputName.value,
+    surnameVal = inputSurname.value,
+    emailVal = inputEmail.value,
     phoneVal = inputPhone.value,
     indexVal = inputIndex.value,
     emptyInputs = Array.from(formInputs).filter((input) => input.value === '');
@@ -56,32 +82,49 @@ form.addEventListener('submit', (e) => {
     }
   });
 
-  if (!validateEmail(emailVal) || emailVal === '') {
-    inputEmail.classList.add('error');
-    setError(inputEmail, 'Проверьте адрес электронной почты');
-    // inputEmail.style.color = 'red';
-    return false;
+  if (nameVal === '') {
+    setErrorFor(inputName, 'Укажите имя');
   } else {
-    // setSuccessFor(inputEmail);
-    inputEmail.classList.remove('error');
-    // inputEmail.style.color = 'black';
+    setSuccessFor(inputName);
   }
 
-  if (!validatePhone(phoneVal)) {
-    inputPhone.classList.add('error');
-
-    return false;
+  if (surnameVal === '') {
+    setErrorFor(inputSurname, 'Введите фамилию');
   } else {
-    inputPhone.classList.remove('error');
+    setSuccessFor(inputSurname);
   }
 
-  if (!validateIndex(indexVal)) {
-    inputIndex.classList.add('error');
-
-    return false;
+  if (emailVal === '') {
+    setErrorFor(inputEmail, 'Укажите электронную почту');
+  } else if (!isEmail(emailVal)) {
+    setErrorFor(inputEmail, 'Проверьте адрес электронной почты');
   } else {
-    inputIndex.classList.remove('error');
+    setSuccessFor(inputEmail);
   }
+
+  if (phoneVal === '') {
+    setErrorFor(inputPhone, 'Укажите номер телефона');
+  } else if (phoneVal.split('').includes('_')) {
+    setErrorFor(inputPhone, 'Формат: +9 999 999 99 99');
+  } else {
+    setSuccessFor(inputPhone);
+  }
+
+  if (indexVal === '') {
+    setErrorFor(inputIndex, 'Укажите индекс');
+  } else if (!validateIndex(indexVal)) {
+    setErrorFor(inputIndex, 'Формат: 1234567');
+  } else {
+    setSuccessFor(inputIndex);
+  }
+
+  // if (!validateIndex(indexVal)) {
+  //   inputIndex.classList.add('error');
+
+  //   return false;
+  // } else {
+  //   inputIndex.classList.remove('error');
+  // }
 
   if (!inputCheckbox.checked) {
     console.log(inputCheckbox.checked);
@@ -90,10 +133,4 @@ form.addEventListener('submit', (e) => {
   } else {
     customCheckbox.classList.remove('checkbox-error');
   }
-
-  // if (!emptyInputs !== 0) {
-  //   emptyInputs.forEach((item) => {
-  //     item.classList.add('error');
-  //   });
-  // }
 });

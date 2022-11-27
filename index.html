@@ -21,7 +21,12 @@
         <div class="modal-wrapper__choice">
           <div class="modal-wrapper__choice-block">
             <label class="modal-label">
-              <input type="radio" class="real-radio" name="category-card" />
+              <input
+                type="radio"
+                class="real-radio radiobuttons-card"
+                name="category-card"
+                value="card"
+              />
               <div class="span-block">
                 <span class="custom-radio custom-radio_mt5"></span>
               </div>
@@ -34,7 +39,12 @@
 
           <div class="modal-wrapper__choice-block">
             <label class="modal-label">
-              <input type="radio" class="real-radio" name="category-card" />
+              <input
+                type="radio"
+                class="real-radio radiobuttons-card"
+                name="category-card"
+                value="visa"
+              />
               <div class="span-block">
                 <span class="custom-radio custom-radio_mt5"></span>
               </div>
@@ -47,7 +57,12 @@
 
           <div class="modal-wrapper__choice-block">
             <label class="modal-label">
-              <input type="radio" class="real-radio" name="category-card" />
+              <input
+                type="radio"
+                class="real-radio radiobuttons-card"
+                name="category-card"
+                value="master-card-1"
+              />
               <div class="span-block">
                 <span class="custom-radio custom-radio_mt5"></span>
               </div>
@@ -60,7 +75,12 @@
 
           <div class="modal-wrapper__choice-block">
             <label class="modal-label">
-              <input type="radio" class="real-radio" name="category-card" />
+              <input
+                type="radio"
+                class="real-radio radiobuttons-card"
+                name="category-card"
+                value="master-card-2"
+              />
               <div class="span-block">
                 <span class="custom-radio custom-radio_mt5"></span>
               </div>
@@ -72,7 +92,7 @@
           </div>
         </div>
         <div class="modal__button-wrapper">
-          <button class="modal-btn title_fz16 basket__title_fw700">Выбрать</button>
+          <button class="modal-btn modal-btn__card title_fz16 basket__title_fw700">Выбрать</button>
         </div>
       </div>
     </div>
@@ -92,7 +112,12 @@
           <div class="modal__address-blocks">
             <div class="modal-wrapper__choice-block">
               <label class="modal-label">
-                <input type="radio" class="real-radio" name="category-address" />
+                <input
+                  type="radio"
+                  class="real-radio"
+                  name="category-address"
+                  value="tabyshalieva"
+                />
                 <div class="span-block">
                   <span class="custom-radio custom-radio_mt5"></span>
                 </div>
@@ -116,11 +141,22 @@
                   </div>
                 </div>
               </label>
-              <img class="trash-can-modal" src="./img/icons/trash-can.svg" alt="trash" />
+              <div class="basket__icons-baskets">
+                <img
+                  class="basket__icon basket__icon_ml16 trash-can basket__black"
+                  src="./img/icons/trash-can.svg"
+                  alt="trash"
+                />
+                <img
+                  class="basket__icon basket__icon_ml16 trash-can basket__red basket__icon_dn"
+                  src="./img/icons/basket-red.svg"
+                  alt="trash"
+                />
+              </div>
             </div>
             <div class="modal-wrapper__choice-block">
               <label class="modal-label">
-                <input type="radio" class="real-radio" name="category-address" />
+                <input type="radio" class="real-radio" name="category-address" value="zhukeeva" />
                 <div class="span-block">
                   <span class="custom-radio custom-radio_mt5"></span>
                 </div>
@@ -145,16 +181,29 @@
                   </div>
                 </div>
               </label>
-              <img class="trash-can-modal" src="./img/icons/trash-can.svg" alt="trash" />
+              <div class="basket__icons-baskets">
+                <img
+                  class="basket__icon basket__icon_ml16 trash-can basket__black"
+                  src="./img/icons/trash-can.svg"
+                  alt="trash"
+                />
+                <img
+                  class="basket__icon basket__icon_ml16 trash-can basket__red basket__icon_dn"
+                  src="./img/icons/basket-red.svg"
+                  alt="trash"
+                />
+              </div>
             </div>
             <div class="modal-wrapper__choice-block">
               <label class="modal-label">
-                <input type="radio" class="real-radio" name="category-address" />
+                <input type="radio" class="real-radio" name="category-address" value="akhunbaeva" />
                 <div class="span-block">
                   <span class="custom-radio custom-radio_mt5"></span>
                 </div>
                 <div class="choice-block__wrapper">
-                  <div class="choice-block__number">Бишкек, улица Табышалиева, 57</div>
+                  <div class="choice-block__number">
+                    г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                  </div>
                   <div class="choice__block-mobile">
                     <div class="choice-block__number choice-block__number-modal">
                       г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
@@ -173,10 +222,21 @@
                   </div>
                 </div>
               </label>
-              <img class="trash-can-modal" src="./img/icons/trash-can.svg" alt="trash" />
+              <div class="basket__icons-baskets">
+                <img
+                  class="basket__icon basket__icon_ml16 trash-can basket__black"
+                  src="./img/icons/trash-can.svg"
+                  alt="trash"
+                />
+                <img
+                  class="basket__icon basket__icon_ml16 trash-can basket__red basket__icon_dn"
+                  src="./img/icons/basket-red.svg"
+                  alt="trash"
+                />
+              </div>
             </div>
           </div>
-          <button class="modal-btn modal-2__btn">Выбрать</button>
+          <button class="modal-btn modal-btn__delivery modal-2__btn">Выбрать</button>
         </div>
       </div>
     </div>
@@ -268,7 +328,9 @@
 
                     <div class="basket__description">
                       <div class="basket__sum-wrapper basket__sum-wrapper-dn1">
-                        <div class="basket__sum title_fz20"><span>522</span> сом</div>
+                        <div class="basket__sum basket__sum-card title_fz20">
+                          <span>522</span> сом
+                        </div>
                         <div class="basket__discount-wrapper-info">
                           <div class="basket__discount title_fz13"><span>1051</span> сом</div>
                           <div class="basket__discount_absolute">
@@ -316,30 +378,54 @@
                   <div class="basket__wrapper-sum">
                     <div class="basket__counter-wrapper">
                       <div class="basket__wrapper-mobile-left">
-                        <div class="basket__counter basket__counter-mobile">
+                        <div class="basket__counter basket__counter-mobile counter-wrapper">
                           <div class="basket__counter-btn" data-action="minus">
-                            <img src="./img/icons/minus.svg" alt="minus" />
+                            <img src="./img/icons/minus.svg" data-action="minus" alt="minus" />
                           </div>
-                          <div class="basket__count title_fz16">3</div>
+                          <div class="basket__count title_fz16" data-counter>1</div>
                           <div class="basket__counter-btn" data-action="plus">
-                            <img src="./img/icons/plus.svg" alt="plus" />
+                            <img src="./img/icons/plus.svg" data-action="plus" alt="plus" />
                           </div>
                         </div>
                         <div class="basket__left title_fz13">Осталось <span>2</span> шт.</div>
                       </div>
                       <div class="basket__icons-wrapper">
-                        <img class="basket__icon" src="./img/icons/heart.svg" alt="heart" />
-                        <img
-                          class="basket__icon basket__icon_ml16 trash-can"
-                          src="./img/icons/trash-can.svg"
-                          alt="trash"
-                        />
+                        <div class="basket__icons-hearts">
+                          <img
+                            class="basket__icon basket__heart-black"
+                            src="./img/icons/heart.svg"
+                            alt="heart"
+                          />
+                          <img
+                            class="basket__icon basket__heart-pink basket__icon_dn"
+                            src="./img/icons/heart-pink.svg"
+                            alt="heart"
+                          />
+                        </div>
+                        <div class="basket__icons-baskets">
+                          <img
+                            data-action="trash"
+                            class="basket__icon basket__icon_ml16 trash-can basket__black"
+                            src="./img/icons/trash-can.svg"
+                            alt="trash"
+                          />
+                          <img
+                            data-action="trash"
+                            class="basket__icon basket__icon_ml16 trash-can basket__red basket__icon_dn"
+                            src="./img/icons/basket-red.svg"
+                            alt="trash"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div class="basket__sum-wrapper basket__sum-wrapper-dn2">
-                      <div class="basket__sum title_fz20"><span>522</span> сом</div>
+                      <div class="basket__sum basket__sum-card title_fz20">
+                        <span data-count="522" class="total-sum">522</span> сом
+                      </div>
                       <div class="basket__discount-wrapper-info">
-                        <div class="basket__discount title_fz13"><span>1051</span> сом</div>
+                        <div class="basket__discount title_fz13">
+                          <span data-discount="1051" class="basket__discount-sum">1051</span> сом
+                        </div>
                         <div class="basket__discount_absolute">
                           <div class="basket__discount-block">
                             <div class="basket__discount-info">Скидка 55%</div>
@@ -368,7 +454,9 @@
                     />
                     <div class="basket__description">
                       <div class="basket__sum-wrapper basket__sum-wrapper-dn1">
-                        <div class="basket__sum title_fz20"><span>2 100 047</span> сом</div>
+                        <div class="basket__sum basket__sum-card title_fz20">
+                          <span>2 100 047</span> сом
+                        </div>
                         <div class="basket__discount-wrapper-info">
                           <div class="basket__discount title_fz13"><span>2 300 047</span> сом</div>
                           <div class="basket__discount_absolute">
@@ -427,30 +515,56 @@
                   </div>
                   <div class="basket__wrapper-sum">
                     <div class="basket__counter-wrapper basket__counter-wrapper-w87">
-                      <div class="basket__counter basket__counter-mobile">
+                      <div class="basket__counter basket__counter-mobile counter-wrapper">
                         <!-- 1233 -->
                         <div class="basket__counter-btn" data-action="minus">
-                          <img src="./img/icons/minus.svg" alt="minus" />
+                          <img src="./img/icons/minus.svg" data-action="minus" alt="minus" />
                         </div>
-                        <div class="basket__count title_fz16">3</div>
+                        <div class="basket__count title_fz16" data-counter>1</div>
                         <div class="basket__counter-btn" data-action="plus">
-                          <img src="./img/icons/plus.svg" alt="plus" />
+                          <img src="./img/icons/plus.svg" data-action="plus" alt="plus" />
                         </div>
                       </div>
 
                       <div class="basket__icons-wrapper">
-                        <img class="basket__icon" src="./img/icons/heart.svg" alt="heart" />
-                        <img
-                          class="basket__icon basket__icon_ml16 trash-can"
-                          src="./img/icons/trash-can.svg"
-                          alt="trash"
-                        />
+                        <div class="basket__icons-hearts">
+                          <img
+                            class="basket__icon basket__heart-black"
+                            src="./img/icons/heart.svg"
+                            alt="heart"
+                          />
+                          <img
+                            class="basket__icon basket__heart-pink basket__icon_dn"
+                            src="./img/icons/heart-pink.svg"
+                            alt="heart"
+                          />
+                        </div>
+
+                        <div class="basket__icons-baskets">
+                          <img
+                            class="basket__icon basket__icon_ml16 trash-can basket__black"
+                            src="./img/icons/trash-can.svg"
+                            alt="trash"
+                          />
+                          <img
+                            class="basket__icon basket__icon_ml16 trash-can basket__red basket__icon_dn"
+                            src="./img/icons/basket-red.svg"
+                            alt="trash"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div class="basket__sum-wrapper basket__sum-wrapper-dn2">
-                      <div class="basket__sum title_fz20"><span>2 100 047</span> сом</div>
+                      <div class="basket__sum title_fz20">
+                        <span data-count="2100047" class="total-sum">2 100 047</span> сом
+                      </div>
                       <div class="basket__discount-wrapper-info">
-                        <div class="basket__discount title_fz13"><span>2 300 047</span> сом</div>
+                        <div class="basket__discount title_fz13">
+                          <span data-discount="2 300 047" class="basket__discount-sum"
+                            >2 300 047</span
+                          >
+                          сом
+                        </div>
                         <div class="basket__discount_absolute">
                           <div class="basket__discount-block">
                             <div class="basket__discount-info">Скидка 55%</div>
@@ -538,57 +652,54 @@
                   <div class="basket__wrapper-sum">
                     <div class="basket__counter-wrapper">
                       <div class="basket__wrapper-mobile-left">
-                        <div class="basket__counter basket__counter-mobile">
+                        <div class="basket__counter basket__counter-mobile counter-wrapper">
                           <div class="basket__counter-btn" data-action="minus">
-                            <img src="./img/icons/minus.svg" alt="minus" />
+                            <img src="./img/icons/minus.svg" data-action="minus" alt="minus" />
                           </div>
-                          <div class="basket__count title_fz16">3</div>
+                          <div class="basket__count title_fz16" data-counter>1</div>
                           <div class="basket__counter-btn" data-action="plus">
-                            <img src="./img/icons/plus.svg" alt="plus" />
+                            <img src="./img/icons/plus.svg" data-action="plus" alt="plus" />
                           </div>
                         </div>
                         <div class="basket__left title_fz13">Осталось <span>2</span> шт.</div>
                       </div>
 
                       <div class="basket__icons-wrapper">
-                        <img class="basket__icon" src="./img/icons/heart.svg" alt="heart" />
-                        <img
-                          class="basket__icon basket__icon_ml16 trash-can"
-                          src="./img/icons/trash-can.svg"
-                          alt="trash"
-                        />
-                        <!-- <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="red"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
-                          fill="black"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
-                          fill="black"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
-                          fill="black"
-                        />
-                      </svg> -->
+                        <div class="basket__icons-hearts">
+                          <img
+                            class="basket__icon basket__heart-black"
+                            src="./img/icons/heart.svg"
+                            alt="heart"
+                          />
+                          <img
+                            class="basket__icon basket__heart-pink basket__icon_dn"
+                            src="./img/icons/heart-pink.svg"
+                            alt="heart"
+                          />
+                        </div>
+
+                        <div class="basket__icons-baskets">
+                          <img
+                            class="basket__icon basket__icon_ml16 trash-can basket__black"
+                            src="./img/icons/trash-can.svg"
+                            alt="trash"
+                          />
+                          <img
+                            class="basket__icon basket__icon_ml16 trash-can basket__red basket__icon_dn"
+                            src="./img/icons/basket-red.svg"
+                            alt="trash"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div class="basket__sum-wrapper basket__sum-wrapper-dn2">
-                      <div class="basket__sum title_fz20"><span>494</span> сом</div>
+                      <div class="basket__sum title_fz20">
+                        <span data-count="494" class="total-sum">494</span> сом
+                      </div>
                       <div class="basket__discount-wrapper-info">
-                        <div class="basket__discount title_fz13"><span>950</span> сом</div>
+                        <div class="basket__discount title_fz13">
+                          <span data-discount="950" class="basket__discount-sum">950</span> сом
+                        </div>
                         <div class="basket__discount_absolute">
                           <div class="basket__discount-block">
                             <div class="basket__discount-info">Скидка 55%</div>
@@ -605,7 +716,7 @@
                 </div>
               </div>
               <!-- mobile -->
-              <div class="basket__blocks-mobile">
+              <!-- <div class="basket__blocks-mobile">
                 <div class="basket__block basket__block-mobile">
                   <div class="basket__block-wrapper basket__block-wrapper-mobile">
                     <div class="basket__wrapper-mobile">
@@ -648,7 +759,7 @@
                           <div class="basket__counter-btn" data-action="minus">
                             <img src="./img/icons/minus.svg" alt="minus" />
                           </div>
-                          <div class="basket__count title_fz16">3</div>
+                          <div class="basket__count title_fz16" data-counter>3</div>
                           <div class="basket__counter-btn" data-action="plus">
                             <img src="./img/icons/plus.svg" alt="plus" />
                           </div>
@@ -675,7 +786,7 @@
                         <input type="checkbox" class="real-checkbox checkbox-js" />
                         <span class="custom-checkbox"></span>
                       </label>
-                      <!-- <div class="basket__choice-size-mobile">56</div> -->
+                     
                       <img
                         class="basket__logo-img basket__logo-img-mobile"
                         src="./img/case.png"
@@ -714,7 +825,7 @@
                           <img src="./img/icons/plus.svg" alt="plus" />
                         </div>
                       </div>
-                      <!-- <div class="basket__left title_fz13">Осталось <span>2</span> шт.</div> -->
+                      
                       <div class="basket__icons-wrapper">
                         <img class="basket__icon" src="./img/icons/heart.svg" alt="heart" />
                         <img
@@ -734,7 +845,7 @@
                         <input type="checkbox" class="real-checkbox checkbox-js" />
                         <span class="custom-checkbox"></span>
                       </label>
-                      <!-- <div class="basket__choice-size-mobile">56</div> -->
+                 
                       <img
                         class="basket__logo-img basket__logo-img-mobile"
                         src="./img/pencils.png"
@@ -754,9 +865,7 @@
                       <div class="basket__description-title title_fz16">
                         Карандаши цветные Faber-Castell "Замок", набор 24 цв...
                       </div>
-                      <!-- <div class="basket__description-block">
-                      <div class="basket__text title_fz13">Цвет: прозрачный</div>
-                    </div> -->
+                    
                       <div class="basket__koledino basket__koledino_mt8 stitle_fz13 title_grey">
                         Коледино WB
                       </div>
@@ -788,7 +897,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <div class="basket__missing">
@@ -828,14 +937,33 @@
                     </div>
                     <div class="basket__missing-wrapper_right">
                       <div class="basket__missing-icons">
-                        <img class="basket__missing-icon" src="./img/icons/heart.svg" alt="heart" />
-                        <img
-                          data-id
-                          class="basket__missing-icon basket__icon_ml16 trash-can"
-                          src="./img/icons/trash-can.svg"
-                          alt="trash"
-                        />
-                        <!-- d1 -->
+                        <div class="basket__icons-wrapper">
+                          <div class="basket__icons-hearts">
+                            <img
+                              class="basket__icon basket__heart-black"
+                              src="./img/icons/heart.svg"
+                              alt="heart"
+                            />
+                            <img
+                              class="basket__icon basket__heart-pink basket__icon_dn"
+                              src="./img/icons/heart-pink.svg"
+                              alt="heart"
+                            />
+                          </div>
+
+                          <div class="basket__icons-baskets">
+                            <img
+                              class="basket__icon basket__icon_ml16 trash-can basket__black"
+                              src="./img/icons/trash-can.svg"
+                              alt="trash"
+                            />
+                            <img
+                              class="basket__icon basket__icon_ml16 trash-can basket__red basket__icon_dn"
+                              src="./img/icons/basket-red.svg"
+                              alt="trash"
+                            />
+                          </div>
+                        </div>
                       </div>
                       <div class="basket__missing-buffer"></div>
                     </div>
@@ -861,21 +989,40 @@
 
                         <div class="basket__missing-text title_fz13">
                           <div class="basket__missing-desc">Цвет: прозрачный</div>
-                          <!-- <div class="basket__missing-desc basket__text_ml16">Размер: 56</div> -->
                         </div>
                       </div>
                     </div>
                     <div class="basket__missing-wrapper_right">
                       <div class="basket__missing-icons">
-                        <img class="basket__missing-icon" src="./img/icons/heart.svg" alt="heart" />
-                        <img
-                          data-id
-                          class="basket__missing-icon basket__icon_ml16 trash-can"
-                          src="./img/icons/trash-can.svg"
-                          alt="trash"
-                        />
+                        <div class="basket__icons-wrapper">
+                          <div class="basket__icons-hearts">
+                            <img
+                              class="basket__icon basket__heart-black"
+                              src="./img/icons/heart.svg"
+                              alt="heart"
+                            />
+                            <img
+                              class="basket__icon basket__heart-pink basket__icon_dn"
+                              src="./img/icons/heart-pink.svg"
+                              alt="heart"
+                            />
+                          </div>
+
+                          <div class="basket__icons-baskets">
+                            <img
+                              class="basket__icon basket__icon_ml16 trash-can basket__black"
+                              src="./img/icons/trash-can.svg"
+                              alt="trash"
+                            />
+                            <img
+                              class="basket__icon basket__icon_ml16 trash-can basket__red basket__icon_dn"
+                              src="./img/icons/basket-red.svg"
+                              alt="trash"
+                            />
+                          </div>
+                        </div>
                       </div>
-                      <!-- d1 -->
+
                       <div class="basket__missing-buffer"></div>
                     </div>
                   </div>
@@ -909,12 +1056,33 @@
                     </div>
                     <div class="basket__missing-wrapper_right">
                       <div class="basket__missing-icons">
-                        <img class="basket__missing-icon" src="./img/icons/heart.svg" alt="heart" />
-                        <img
-                          class="basket__missing-icon basket__icon_ml16 trash-can"
-                          src="./img/icons/trash-can.svg"
-                          alt="trash"
-                        />
+                        <div class="basket__icons-wrapper">
+                          <div class="basket__icons-hearts">
+                            <img
+                              class="basket__icon basket__heart-black"
+                              src="./img/icons/heart.svg"
+                              alt="heart"
+                            />
+                            <img
+                              class="basket__icon basket__heart-pink basket__icon_dn"
+                              src="./img/icons/heart-pink.svg"
+                              alt="heart"
+                            />
+                          </div>
+
+                          <div class="basket__icons-baskets">
+                            <img
+                              class="basket__icon basket__icon_ml16 trash-can basket__black"
+                              src="./img/icons/trash-can.svg"
+                              alt="trash"
+                            />
+                            <img
+                              class="basket__icon basket__icon_ml16 trash-can basket__red basket__icon_dn"
+                              src="./img/icons/basket-red.svg"
+                              alt="trash"
+                            />
+                          </div>
+                        </div>
                       </div>
                       <div class="basket__missing-buffer"></div>
                     </div>
@@ -1039,9 +1207,12 @@
                       Пункт выдачи
                     </div>
                     <div class="basket__way-text-wrapper">
-                      <div class="basket__way-text-desc">
-                        Бишкек, улица Ахматбека Суюмбаева, 12/1
+                      <div class="basket__wrapper-desc">
+                        <div class="basket__way-text-desc basket__text-delivery">
+                          Бишкек, улица Ахматбека Суюмбаева, 12/1
+                        </div>
                       </div>
+
                       <div class="basket__way-text-time">
                         <img class="basket__way-star" src="./img/icons/Stars.svg" alt="star" />
                         <div class="basket__way-rating">4.99</div>
@@ -1124,8 +1295,11 @@
                   </div>
                 </div>
                 <div class="basket__option-card">
-                  <img class="basket__option-img" src="./img/icons/card.svg" alt="card" />
-                  <div class="basket__option-card-number">1234 56•• •••• 1234</div>
+                  <div class="basket__option-card-wrapper">
+                    <img class="basket__option-img" src="./img/icons/card.svg" alt="card" />
+                    <div class="basket__option-card-number">1234 56•• •••• 1234</div>
+                  </div>
+
                   <div class="basket__option-card-data">01/30</div>
                 </div>
                 <div class="basket__option-explanation title_fz13">
@@ -1182,10 +1356,11 @@
                             type="telephone"
                             name="phone"
                             data-validate-field="tel"
+                            maxlength="30"
                           />
                           <label class="basket__label-telephone" for="telephone">Телефон</label>
+                          <div class="form__error-message">Error</div>
                         </div>
-                        <div class="form__error-message">Error</div>
                       </div>
                       <div class="form-control">
                         <div class="basket__input-inn-wrapper">
@@ -1195,6 +1370,7 @@
                             type="text"
                             name="index"
                             data-validate-field="index"
+                            maxlength="10"
                           />
                           <div class="form__error-message form__error-message_b-20">Error</div>
                           <div class="basket__input-inn-text">Для таможенного оформления</div>
@@ -1245,9 +1421,12 @@
                       alt="pencil"
                     />
                   </div>
-                  <div class="basket__paragraph-text basket__wrapper_fw600 title_fz13">
-                    Бишкек, улица Ахматбека Суюмбаева, 12/1
+                  <div class="basket__paragraph-text-wrapper">
+                    <div class="basket__paragraph-text basket__wrapper_fw600 title_fz13">
+                      Бишкек, улица Ахматбека Суюмбаева, 12/1
+                    </div>
                   </div>
+
                   <div class="basket__paragraph-number basket__wrapper_fw600 title_fz13">
                     5-8 фев
                   </div>
