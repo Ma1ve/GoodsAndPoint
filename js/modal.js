@@ -65,6 +65,7 @@ function hideTabContent() {
 
 function showTabContent(i = 0) {
   tabs[i].classList.add('modal-choice__btn-active');
+  document.querySelector('.basket__delivery-sum').innerText = tabs[i].innerText;
 }
 
 tabsParent.addEventListener('click', (e) => {

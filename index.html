@@ -329,10 +329,12 @@
                     <div class="basket__description">
                       <div class="basket__sum-wrapper basket__sum-wrapper-dn1">
                         <div class="basket__sum basket__sum-card title_fz20">
-                          <span>522</span> сом
+                          <span data-count="522" class="total-sum-mobile">522</span> сом
                         </div>
                         <div class="basket__discount-wrapper-info">
-                          <div class="basket__discount title_fz13"><span>1051</span> сом</div>
+                          <div class="basket__discount title_fz13">
+                            <span data-discount="1051" class="total-sum-discount">1051</span> сом
+                          </div>
                           <div class="basket__discount_absolute">
                             <div class="basket__discount-block">
                               <div class="basket__discount-info">Скидка 55%</div>
@@ -424,7 +426,10 @@
                       </div>
                       <div class="basket__discount-wrapper-info">
                         <div class="basket__discount title_fz13">
-                          <span data-discount="1051" class="basket__discount-sum">1051</span> сом
+                          <span data-discount="1051" class="basket__discount-sum total-sum-discount"
+                            >1051</span
+                          >
+                          сом
                         </div>
                         <div class="basket__discount_absolute">
                           <div class="basket__discount-block">
@@ -454,11 +459,32 @@
                     />
                     <div class="basket__description">
                       <div class="basket__sum-wrapper basket__sum-wrapper-dn1">
-                        <div class="basket__sum basket__sum-card title_fz20">
+                        <!-- <div class="basket__sum basket__sum-card title_fz20">
                           <span>2 100 047</span> сом
                         </div>
                         <div class="basket__discount-wrapper-info">
                           <div class="basket__discount title_fz13"><span>2 300 047</span> сом</div>
+                          <div class="basket__discount_absolute">
+                            <div class="basket__discount-block">
+                              <div class="basket__discount-info">Скидка 55%</div>
+                              <div class="basket__discount-number">−300 сом</div>
+                            </div>
+                            <div class="basket__discount-block basket__discount-block_mt8">
+                              <div class="basket__discount-info">Скидка покупателя 10%</div>
+                              <div class="basket__discount-number">−30 сом</div>
+                            </div>
+                          </div>
+                        </div> -->
+                        <div class="basket__sum basket__sum-card title_fz20">
+                          <span data-count="2100047" class="total-sum-mobile">2 100 047</span> сом
+                        </div>
+                        <div class="basket__discount-wrapper-info">
+                          <div class="basket__discount title_fz13">
+                            <span data-discount="2300047" class="total-sum-discount"
+                              >2 300 047</span
+                            >
+                            сом
+                          </div>
                           <div class="basket__discount_absolute">
                             <div class="basket__discount-block">
                               <div class="basket__discount-info">Скидка 55%</div>
@@ -542,11 +568,13 @@
 
                         <div class="basket__icons-baskets">
                           <img
+                            data-action="trash"
                             class="basket__icon basket__icon_ml16 trash-can basket__black"
                             src="./img/icons/trash-can.svg"
                             alt="trash"
                           />
                           <img
+                            data-action="trash"
                             class="basket__icon basket__icon_ml16 trash-can basket__red basket__icon_dn"
                             src="./img/icons/basket-red.svg"
                             alt="trash"
@@ -560,7 +588,9 @@
                       </div>
                       <div class="basket__discount-wrapper-info">
                         <div class="basket__discount title_fz13">
-                          <span data-discount="2 300 047" class="basket__discount-sum"
+                          <span
+                            data-discount="2 300 047"
+                            class="basket__discount-sum total-sum-discount"
                             >2 300 047</span
                           >
                           сом
@@ -593,9 +623,13 @@
                     />
                     <div class="basket__description">
                       <div class="basket__sum-wrapper basket__sum-wrapper-dn1">
-                        <div class="basket__sum title_fz20"><span>494</span> сом</div>
+                        <div class="basket__sum title_fz20">
+                          <span data-count="494" class="total-sum-mobile">494</span> сом
+                        </div>
                         <div class="basket__discount-wrapper-info">
-                          <div class="basket__discount title_fz13"><span>950</span> сом</div>
+                          <div class="basket__discount title_fz13">
+                            <span data-discount="950" class="total-sum-discount">950</span> сом
+                          </div>
                           <div class="basket__discount_absolute">
                             <div class="basket__discount-block">
                               <div class="basket__discount-info">Скидка 55%</div>
@@ -680,11 +714,13 @@
 
                         <div class="basket__icons-baskets">
                           <img
+                            data-action="trash"
                             class="basket__icon basket__icon_ml16 trash-can basket__black"
                             src="./img/icons/trash-can.svg"
                             alt="trash"
                           />
                           <img
+                            data-action="trash"
                             class="basket__icon basket__icon_ml16 trash-can basket__red basket__icon_dn"
                             src="./img/icons/basket-red.svg"
                             alt="trash"
@@ -698,7 +734,10 @@
                       </div>
                       <div class="basket__discount-wrapper-info">
                         <div class="basket__discount title_fz13">
-                          <span data-discount="950" class="basket__discount-sum">950</span> сом
+                          <span data-discount="950" class="basket__discount-sum total-sum-discount"
+                            >950</span
+                          >
+                          сом
                         </div>
                         <div class="basket__discount_absolute">
                           <div class="basket__discount-block">
@@ -1387,20 +1426,23 @@
               <div class="basket__order-wrapper">
                 <div class="basket__total-wrapper basket__wrapper_df title_fz24">
                   <div class="basket__total-title">Итого</div>
-                  <div class="basket__total-sum"><span>2 101 063</span> сом</div>
+                  <div class="basket__total-sum">
+                    <span class="span-total-sum">2 101 063</span>
+                    сом
+                  </div>
                 </div>
                 <div class="basket__info-wrapper">
                   <div
                     class="basket__product-wrapper basket__wrapper_df basket__wrapper_fw600 title_fz16"
                   >
-                    <div class="basket__product-title"><span>4</span> товара</div>
+                    <div class="basket__product-title"><span>3</span> товара</div>
                     <div class="basket__product-sum"><span>2 302 048</span> сом</div>
                   </div>
                   <div
                     class="basket__discount-wrapper basket__wrapper_df basket__wrapper_fw600 title_fz16"
                   >
                     <div class="basket__discount-title">Скидка</div>
-                    <div class="basket__discount-sum"><span>−200 985</span> сом</div>
+                    <div class="basket__discount-sum sum-dicount">− <span>200 985</span> сом</div>
                   </div>
                   <div
                     class="basket__delivery-wrapper basket__wrapper_df basket__wrapper_fw600 title_fz16"

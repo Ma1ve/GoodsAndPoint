@@ -125,42 +125,6 @@ baskets.forEach((item) => {
   });
 });
 
-// baskets.forEach((item) => {
-//   item.addEventListener('mouseover', (e) => {
-//     const target = e.target;
-//     console.log(e.target);
-//     if (target && target.classList.contains('trash-can')) {
-//       item.innerHTML = `
-//     <img
-//       class="basket__icon basket__icon_ml16 trash-can basket__black"
-//       src="./img/icons/trash-can.svg"
-//       alt="trash"
-//     />`;
-//     } else {
-//       item.innerHTML = `
-//     <img
-//       class="basket__icon basket__icon_ml16 trash-can basket__black"
-//       src="./img/icons/basket-red.svg"
-//       alt="trash"
-//     />`;
-//     }
-//   });
-// });
-
-// baskets.forEach((item) => {
-//   item.addEventListener('mouseout', (e) => {
-//     const target = e.target;
-//     if (target && target.classList.contains('basket__black')) {
-//       item.innerHTML = `
-//     <img
-//       class="basket__icon basket__icon_ml16 trash-can basket__black"
-//       src="./img/icons/basket-red.svg"
-//       alt="trash"
-//     />`;
-//     }
-//   });
-// });
-
 // Basket logic
 
 // const normalPrice = (price) => {
@@ -176,80 +140,138 @@ deleteElementBasketMissing.forEach((item, i) => {
 
     if (target.classList.contains('trash-can')) {
       item.remove();
+      item.setAttribute('data-count', 0);
+      console.log(item);
     }
   });
 });
 
+let deleteBasket = document.querySelectorAll('.basket__missing-block');
+let spanTotalSum = document.querySelector('.span-total-sum');
+let spanTotalCount = document.querySelector('.basket__product-title span');
+let spanTotalDiscount = document.querySelector('.basket__product-sum span');
+
+let countBasket = deleteElementBasket.length;
+
+let basketTitleCount = document.querySelector('.basket__product-title span');
+let basketTitleCountLength = parseInt(basketTitleCount.innerText);
+
 window.addEventListener('click', function (e) {
   let counter, counterSum, counterDiscountSum, dataSumValue, dataDiscountValue;
+  let total = 0;
+  let totalCount = 0;
+  let totalCountSum = 0;
 
-  if (e.target.dataset.action === 'trash') {
-    console.log(1);
+  function numberDeleteSpaces(str) {
+    return String(str).replace(/\s/g, '');
   }
 
-  let total = 0;
-  if (
-    e.target.dataset.action === 'plus' ||
-    e.target.dataset.action === 'minus' ||
-    e.target.dataset.action === 'trash'
-  ) {
-    const counterWrapper = e.target.closest('.counter-wrapper');
-    // console.log(counterWrapper);
-
-    // const counterTrash = e.target.closest('.basket__counter-wrapper');
-    // console.log(counterTrash);
-
-    counter = counterWrapper.querySelector('[data-counter]');
-    const counterWrapperSum = e.target.closest('.basket__wrapper-sum');
-    counterSum = counterWrapperSum.querySelector('.total-sum');
-    counterDiscount = counterWrapperSum.querySelector('.basket__discount-sum');
-
-    dataSumValue = counterSum.getAttribute('data-count');
-    dataDiscountValue = counterDiscount.getAttribute('data-discount');
-    console.log(dataDiscountValue);
-    // console.log(parseInt(dataMinus));
-
-    counterDiscountSum = counterWrapperSum.querySelector('.basket__discount-sum');
+  function totalSum() {
     const firstSum = document.querySelectorAll('.total-sum');
-
     firstSum.forEach((item) => {
-      // total = total + parseInt(item.innerText.replace(/\s/g, ''));
-      // console.log(parseInt(item.innerText.replace(/\s/g, '')));
+      total += parseInt(numberDeleteSpaces(item.innerText));
 
-      total = total + parseInt(item.innerText.replace(/\s/g, ''));
-      console.log(parseInt(item.innerText.replace(/\s/g, '')));
+      spanTotalSum.innerText = normalPrice(total);
     });
 
-    document.querySelector('.basket__total-sum span').innerText = normalPrice(total);
+    const firstTotalCount = document.querySelectorAll('.basket__count');
+    firstTotalCount.forEach((item) => {
+      totalCount += parseInt(item.innerText);
+
+      spanTotalCount.innerText = totalCount;
+    });
+
+    const firstTotatDiscountSum = document.querySelectorAll('.total-sum-discount');
+    firstTotatDiscountSum.forEach((item) => {
+      totalCountSum += parseInt(numberDeleteSpaces(item.innerText));
+
+      spanTotalDiscount.innerText = normalPrice(totalCountSum);
+    });
+
+    const spanDiscount = document.querySelector('.sum-dicount span');
+    spanDiscount.innerText = `${normalPrice(totalCountSum - total)}`;
   }
-  ////////////////////////////////////////////
-  if (e.target.dataset.action === 'plus') {
-    counter.innerText = ++counter.innerText;
-    counterSum.innerText = parseInt(counter.innerText) * parseInt(dataSumValue);
-    // parseInt(counterSum.innerText.replace(/\s/g, '')) + parseInt(dataSumValue);
 
-    console.log(parseInt(counter.innerText) * parseInt(dataSumValue));
-
-    counterDiscountSum.innerText =
-      parseInt(counterDiscountSum.innerText.replace(/\s/g, '')) + parseInt(dataDiscountValue);
-  }
-
-  if (e.target.dataset.action === 'minus') {
-    if (parseInt(counter.innerText) > 1) {
-      counter.innerText = --counter.innerText;
-
-      counterSum.innerText =
-        parseInt(counterSum.innerText.replace(/\s/g, '')) - parseInt(dataSumValue);
-
-      counterDiscountSum.innerText =
-        parseInt(counterDiscountSum.innerText.replace(/\s/g, '')) - parseInt(dataDiscountValue);
+  if (e.target.dataset.action === 'trash') {
+    totalSum();
+    console.log(total);
+    countBasket = countBasket - 1;
+    if (countBasket === 0) {
+      spanTotalSum.innerText = 0;
+      spanTotalCount.innerText = 0;
+      spanTotalDiscount.innerText = 0;
+      document.querySelector('.sum-dicount').innerText = `0 com`;
     }
   }
-});
 
-// counterTotal = document.querySelectorAll('[data-counter]');
-// counterTotal.forEach((item) => {
-//   console.log(item.innerText);
-//   sum = sum + parseInt(item.innerText);
-//   console.log(sum);
-// });
+  if (e.target.dataset.action === 'plus' || e.target.dataset.action === 'minus') {
+    // const test = e.target.closest('.basket__block');
+    // counter = test.querySelector('[data-counter]');
+
+    // console.log(counter);
+    const counterWrapper = e.target.closest('.basket__block');
+    counter = counterWrapper.querySelector('[data-counter]');
+    const counterWrapperSum = e.target.closest('.basket__wrapper-sum'); //counterWrapperSum
+    console.log(counterWrapperSum);
+    counterSum = counterWrapper.querySelector('.total-sum'); //counterWrapperSum
+
+    counterDiscount = counterWrapper.querySelector('.basket__discount-sum'); //counterWrapperSum
+
+    // mobile
+    counterSumMobile = counterWrapper.querySelector('.total-sum-mobile');
+    dataSumValueMobile = counterSumMobile.getAttribute('data-count');
+    dataDiscountValueMobile = counterDiscount.getAttribute('data-discount');
+    counterDiscountSumMobile = counterWrapper.querySelector('.total-sum-discount');
+
+    // counterSum = counterWrapper.querySelector('.total-sum');
+    // counterDiscount = counterWrapper.querySelector('.basket__discount-sum'); //counterWrapperSum
+    dataSumValue = counterSum.getAttribute('data-count');
+    dataDiscountValue = counterDiscount.getAttribute('data-discount');
+    counterDiscountSum = counterWrapper.querySelector('.basket__discount-sum'); //counterWrapperSum
+    if (e.target.dataset.action === 'plus') {
+      counter.innerText = ++counter.innerText;
+      counterSum.innerText = normalPrice(
+        parseInt(numberDeleteSpaces(counterSum.innerText)) + parseInt(dataSumValue),
+      );
+      counterDiscountSum.innerText = normalPrice(
+        parseInt(numberDeleteSpaces(counterDiscountSum.innerText)) +
+          parseInt(numberDeleteSpaces(dataDiscountValue)),
+      );
+
+      //mobile
+
+      counterSumMobile.innerText = normalPrice(
+        parseInt(numberDeleteSpaces(counterSumMobile.innerText)) + parseInt(dataSumValueMobile),
+      );
+
+      counterDiscountSumMobile.innerText = normalPrice(
+        parseInt(numberDeleteSpaces(counterDiscountSumMobile.innerText)) +
+          parseInt(numberDeleteSpaces(dataDiscountValueMobile)),
+      );
+    }
+    if (e.target.dataset.action === 'minus') {
+      if (parseInt(counter.innerText) > 1) {
+        counter.innerText = --counter.innerText;
+        counterSum.innerText = normalPrice(
+          parseInt(numberDeleteSpaces(counterSum.innerText)) - parseInt(dataSumValue),
+        );
+        counterDiscountSum.innerText = normalPrice(
+          parseInt(numberDeleteSpaces(counterDiscountSum.innerText)) -
+            parseInt(numberDeleteSpaces(dataDiscountValue)),
+        );
+
+        //mobile
+
+        counterSumMobile.innerText = normalPrice(
+          parseInt(numberDeleteSpaces(counterSumMobile.innerText)) - parseInt(dataSumValueMobile),
+        );
+
+        counterDiscountSumMobile.innerText = normalPrice(
+          parseInt(numberDeleteSpaces(counterDiscountSumMobile.innerText)) -
+            parseInt(numberDeleteSpaces(dataDiscountValueMobile)),
+        );
+      }
+    }
+    totalSum();
+  }
+});
