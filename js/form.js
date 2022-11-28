@@ -14,18 +14,14 @@ inputMask.mask(inputPhone);
 let btnActive = document.querySelector('.basket__access-btn'),
   totalSum = document.querySelector('.basket__total-sum span');
 
-// console.log(totalSum.innerText);
-
 const normalPrice = (price) => {
   return String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 };
 
 inputCheckbox.addEventListener('change', function () {
   if (this.checked) {
-    // btnActive.classList.add('basket__access-btn-active');
     btnActive.innerText = `Заказать ${normalPrice(totalSum.innerText.replace(/\s/g, ''))} сом`;
   } else {
-    // btnActive.classList.remove('basket__access-btn-active');
     btnActive.innerText = `Оплатить`;
   }
 });
@@ -52,15 +48,13 @@ function setErrorFor(input, message) {
   error.style.display = 'block';
   error.innerText = message;
   formControl.querySelector('.js-input').classList.add('error');
-  // formControl.querySelector('.js-input').style.color = 'red';
-} // SETERROR
+}
 
 function setSuccessFor(input) {
   const formControl = input.parentElement;
   const error = formControl.querySelector('.form__error-message');
   error.style.display = 'none';
   formControl.querySelector('.js-input').classList.remove('error');
-  // formControl.querySelector('.js-input').style.color = 'black';
 }
 
 form.addEventListener('submit', (e) => {
@@ -117,14 +111,6 @@ form.addEventListener('submit', (e) => {
   } else {
     setSuccessFor(inputIndex);
   }
-
-  // if (!validateIndex(indexVal)) {
-  //   inputIndex.classList.add('error');
-
-  //   return false;
-  // } else {
-  //   inputIndex.classList.remove('error');
-  // }
 
   if (!inputCheckbox.checked) {
     console.log(inputCheckbox.checked);

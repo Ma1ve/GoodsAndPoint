@@ -127,10 +127,6 @@ baskets.forEach((item) => {
 
 // Basket logic
 
-// const normalPrice = (price) => {
-//   return String(price).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-// };
-
 let deleteElementBasketMissing = document.querySelectorAll('.basket__block'),
   countMissingBasket = document.querySelector('.basket__missing-title span');
 
@@ -205,17 +201,13 @@ window.addEventListener('click', function (e) {
   }
 
   if (e.target.dataset.action === 'plus' || e.target.dataset.action === 'minus') {
-    // const test = e.target.closest('.basket__block');
-    // counter = test.querySelector('[data-counter]');
-
-    // console.log(counter);
     const counterWrapper = e.target.closest('.basket__block');
     counter = counterWrapper.querySelector('[data-counter]');
-    const counterWrapperSum = e.target.closest('.basket__wrapper-sum'); //counterWrapperSum
+    const counterWrapperSum = e.target.closest('.basket__wrapper-sum');
     console.log(counterWrapperSum);
-    counterSum = counterWrapper.querySelector('.total-sum'); //counterWrapperSum
+    counterSum = counterWrapper.querySelector('.total-sum');
 
-    counterDiscount = counterWrapper.querySelector('.basket__discount-sum'); //counterWrapperSum
+    counterDiscount = counterWrapper.querySelector('.basket__discount-sum');
 
     // mobile
     counterSumMobile = counterWrapper.querySelector('.total-sum-mobile');
@@ -223,11 +215,9 @@ window.addEventListener('click', function (e) {
     dataDiscountValueMobile = counterDiscount.getAttribute('data-discount');
     counterDiscountSumMobile = counterWrapper.querySelector('.total-sum-discount');
 
-    // counterSum = counterWrapper.querySelector('.total-sum');
-    // counterDiscount = counterWrapper.querySelector('.basket__discount-sum'); //counterWrapperSum
     dataSumValue = counterSum.getAttribute('data-count');
     dataDiscountValue = counterDiscount.getAttribute('data-discount');
-    counterDiscountSum = counterWrapper.querySelector('.basket__discount-sum'); //counterWrapperSum
+    counterDiscountSum = counterWrapper.querySelector('.basket__discount-sum');
     if (e.target.dataset.action === 'plus') {
       counter.innerText = ++counter.innerText;
       counterSum.innerText = normalPrice(

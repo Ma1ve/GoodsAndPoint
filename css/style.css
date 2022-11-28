@@ -13,7 +13,6 @@
 }
 
 body {
-  /* height: 2045px; */
   background: #6725a8;
 }
 
@@ -24,10 +23,6 @@ button {
   cursor: pointer;
   transition: 0.4s;
 }
-
-/* button:hover {
-  
-} */
 
 .container {
   max-width: 1400px;

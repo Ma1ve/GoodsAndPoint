@@ -5,7 +5,6 @@
 .header__wrapper {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   height: 88px;
   margin: 0 25px;
 }
@@ -74,8 +73,6 @@
 
 .header__icons {
   display: flex;
-  /* width: 150px;
-  justify-content: space-between; */
 }
 
 .header__icon_ml40 {
@@ -95,14 +92,6 @@
   text-align: center;
   color: #fff;
 }
-
-/* .header__icon-user {
-  width: 30px;
-  height: 25px;
-  display: flex;
-  margin: 0 auto;
-  object-fit: contain;
-} */
 
 .header__icon-basket {
   width: 45px;

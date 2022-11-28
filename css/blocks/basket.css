@@ -1,9 +1,4 @@
-/* .basket__left-side {
-  width: 890px;
-} */
-
 .basket__wrapper {
-  /* height: 1895px; */
   height: 100%;
   background: #f6f6fa;
   border-radius: 25px;
@@ -62,9 +57,6 @@
 
 .basket__block-wrapper {
   display: flex;
-
-  /* align-items: center;
-  height: 96px; */
 }
 
 .basket__description {
@@ -91,7 +83,6 @@
 .basket__logo-img {
   width: 72px;
   height: 96px;
-  cursor: pointer;
 }
 
 .basket__text_ml16 {
@@ -102,17 +93,6 @@
   position: relative;
   display: flex;
 }
-
-/* .basket__company::after {
-  content: '';
-  background-image: url('../../img/icons/info.svg');
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-left: 6px;
-} */
 
 .basket__company-wrapper {
   position: relative;
@@ -189,25 +169,6 @@
   color: #a0a0a4;
 }
 
-/* .basket__company-img:hover:after {
-  z-index: 100;
-  content: '';
-  padding: absolute;
-  width: 100px;
-  height: 100px;
-  background: red;
-} */
-
-/* .basket__company::after:hover {
-  position: absolute;
-  cursor: pointer;
-  width: 100px;
-  height: 100px;
-  background: red;
-} */
-
-/* .basket__discount:hover +  */
-
 .basket__blocks {
   height: 100%;
   transition: 0.3s;
@@ -221,10 +182,6 @@
 .basket__sum-wrapper {
   text-align: right;
 }
-
-/* .basket__discount:hover + .basket__discount_absolute {
-  position: absolute;
-} */
 
 .basket__count {
   width: 40px;
@@ -576,10 +533,6 @@ basket__missing-buffer {
   align-items: center;
 }
 
-/* .basket__way-reverse {
-  display: flex;
-} */
-
 .basket__way-wrapper-info {
   position: relative;
 }
@@ -690,22 +643,9 @@ basket__contacts-form-group {
   font-size: 16px;
 }
 
-/* .basket__form-input:focus {
-  border-bottom: 1px solid #6725a8;
-} */
-/* ~ .basket__form-input */
-/* .basket__form-input:focus ~ .basket__form-input {
-  top: -30px;
-  font-size: 12px;
-} */
-
 .basket__contacts-block {
   margin-top: 35px;
 }
-
-/* .basket__input-surname {
-  margin-left: 24px;
-} */
 
 .basket__input-email,
 .basket__input-telephone,
@@ -770,7 +710,6 @@ basket__contacts-form-group {
   border-radius: 6px;
   bottom: 10px;
   left: 5px;
-  /* display: flex !important; */
   justify-content: center;
   align-items: center;
   font-size: 14px;
