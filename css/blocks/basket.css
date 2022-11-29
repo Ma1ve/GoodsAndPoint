@@ -237,13 +237,17 @@
 
 .basket__icons-wrapper {
   display: flex;
-  justify-content: right;
-  /* margin-left: 26px; */
+  /*   justify-content: right;
+  margin-left: 26px; */
   margin-top: 8px;
+
+  width: 50px;
+  justify-content: space-between;
+  margin-left: 45px;
 }
 
 .basket__icon_ml16 {
-  margin-left: 16px;
+  /*   margin-left: 16px; */
 }
 
 .basket__sum {
@@ -437,7 +441,7 @@
 }
 
 .basket__missing-wrapper_right {
-  width: 208px;
+  width: 248px;
   display: flex;
   justify-content: space-between;
 }
